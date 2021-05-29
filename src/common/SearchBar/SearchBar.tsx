@@ -5,7 +5,6 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export const SearchBar = () => {
     const history = useHistory();
-    //const location: string = useLocation().pathname;
     const searchKeyWord = (event: any, origin = 'input') => {
         if (event.charCode === 13 || origin === 'button') {
             history.push(`/items?search=${(document.getElementById("inputSearchBar") as HTMLInputElement).value}`);
