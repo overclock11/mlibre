@@ -1,0 +1,45 @@
+@import "../../index";
+.list{
+  list-style: none;
+  padding: 0 10px 0 10px;
+  &__list-container{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  &__list-item{
+    background-color: $ml-background-card-color;
+    padding: 5px 5px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #eee;
+
+    &--image{
+      height: 160px;
+      width: 160px;
+    }
+  }
+  &__item-detail{
+    &--title{
+      font-size: $ml-size-list-title;
+      font-weight: 300;
+    }
+    &--link{
+      text-decoration: none;
+      color: inherit;
+    }
+    &--description{
+      font-weight: 300;
+    }
+    &--shipping {
+      color: $ml-shipping-color;
+    }
+  }
+  &__item-address{
+    padding: 10px 15px 0 0;
+    font-style: inherit;
+  }
+  &__breadcrumb {
+    max-width: 1200px;
+    margin: 15px auto;
+    background-color: inherit;
+  }
+}

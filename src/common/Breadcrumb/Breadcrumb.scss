@@ -1,0 +1,11 @@
+@import '../../index';
+.breadcrumb{
+  margin: 10px auto;
+  font-size: 14px;
+  color: #7d6666;
+  max-width: 1180px;
+  padding: 0 10px 0 10px;
+  &__item{
+    margin-right: 5px;
+  }
+}

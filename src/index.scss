@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+$ml-search-background-color: #fff159;
+$ml-background-color: #ebebeb;
+$ml-background-card-color: #fff;
+$ml-shipping-color: #00ae9c;
+$ml-buy-button-color: #3483fa;
+
+
+$ml-size-list-title: 20px;
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $ml-background-color;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}

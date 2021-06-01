@@ -1,13 +1,15 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {useHistory} from "react-router-dom";
-import {useLocation} from "react-router-dom";
 import SearchIcon from '@material-ui/icons/Search';
+import './SearchBar.scss';
+import {useMemo} from "react";
 
-export const SearchBar = () => {
+export const SearchBar = ({searchKey} : { searchKey: Function}) => {
     const history = useHistory();
     const searchKeyWord = (event: any, origin = 'input') => {
         if (event.charCode === 13 || origin === 'button') {
             history.push(`/items?search=${(document.getElementById("inputSearchBar") as HTMLInputElement).value}`);
+            searchKey((document.getElementById("inputSearchBar") as HTMLInputElement).value);
             (document.getElementById("inputSearchBar") as HTMLInputElement).value = '';
         }
     }

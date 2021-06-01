@@ -1,0 +1,59 @@
+@import '../../index';
+.search{
+  background-color: $ml-search-background-color;
+  padding: 8px;
+  text-align: center;
+  &__input-search{
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 0;
+    width: 58%;
+    height: 32px;
+    padding: 0 7px;
+  }
+  &__button-search{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 0;
+    height: 32px;
+    padding: 0 7px;
+    vertical-align: bottom;
+  }
+  &__logo{
+    vertical-align: bottom;
+    margin-right: 8px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .search {
+    background-color: $ml-search-background-color;
+    padding: 8px;
+    text-align: center;
+
+    &__input-search {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      border: 0;
+      width: 90%;
+      height: 32px;
+      padding: 0 7px;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .search {
+    background-color: $ml-search-background-color;
+    padding: 8px;
+    text-align: center;
+
+    &__input-search {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      border: 0;
+      width: 58%;
+      height: 32px;
+      padding: 0 7px;
+    }
+  }
+}
