@@ -1,0 +1,16 @@
+@import '../../index';
+.button{
+  border: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+  &__type{
+
+    &--buy{
+      background-color: $ml-buy-button-color;
+      color: white;
+    }
+  }
+}
