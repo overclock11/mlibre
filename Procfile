@@ -1,1 +1,1 @@
-web: cd build node app.js
+web: tsc && node ./build/app.js
