@@ -24,11 +24,9 @@
   },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && react-snap && copyBuild.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prod": "react-scripts build && react-snap && copyBuild.js",
-    "postbuild": "react-snap"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
