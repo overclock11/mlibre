@@ -4,6 +4,9 @@
   margin: 15px auto;
   background-color: $ml-background-card-color;
   border-radius: 5px;
+  &__image{
+    padding-top: 18px;
+  }
   &__item-space{
     padding: 0 10px 0 10px;
   }
@@ -15,23 +18,35 @@
   &__product-detail{
     padding: 0 5px;
   }
+  &__detail{
+    padding: 0 32px;
+  }
+  &__price{
+    font-size: 46px;
+  }
+  &__sold{
+    font-size: 14px;
+  }
   &__description{
     padding: 0 5px;
     text-align: left;
     color: #7d6666;
     white-space: pre-line;
     word-wrap: anywhere;
+    font-size: 16px;
   }
   &__title{
     font-weight: 600;
-    font-size: 22px;
+    font-size: $ml-size-list-title;
+    margin-bottom: 32px;
     &--description{
       padding-left: 46px;
+      font-size: 28px;
       font-weight: 600;
     }
   }
   &__buy-button{
-    margin-top: 40px;
+    margin-top: 32px;
   }
   &__container-image{
     height: 100%;

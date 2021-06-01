@@ -1,0 +1,10 @@
+@import '../../index';
+.empty{
+  background-color: $ml-background-card-color;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  &__search-icon{
+    flex: 0.5;
+  }
+}

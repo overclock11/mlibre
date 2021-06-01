@@ -15,20 +15,19 @@ export const ItemList = ({itemList, searchKey}: {itemList: IItemList | null, sea
         itemList?.items.forEach((item)=>{
             itemsArray.push(
                 <li className="list__list-item" key={item.id}>
-                    <Grid container
-                          justify="space-between">
-                        <Grid item sm={3} md={2} >
+                    <Grid container justify="space-between">
+                        <Grid item sm={4} md={3} className="list__image-container">
                             <Link to={`/items/${item.id}`}>
-                                <img src={item.picture} alt={item.title} width="160" height="160"/>
+                                <img className="list__image-container--image" src={item.picture} alt={item.title} width="160" height="160"/>
                             </Link>
                         </Grid>
-                        <Grid item sm={7}  md={8} className="list__item-detail">
-                            <p className="list__item-detail--description">
+                        <Grid item  sm={6}  md={7} className="list__item-detail">
+                            <p  className="list__item-detail--title">
                                 <strong>$ {item.price.amount.toLocaleString(navigator.language, { currency: item.price.currency, style:'decimal'})}</strong>
                             </p>
                             <p className="list__item-detail--shipping">{item.free_shipping ? "Envío gratis": "Envío con costo"}</p>
                             <Link to={`/items/${item.id}`}  className="list__item-detail--link">
-                                <h2 className="list__item-detail--title">
+                                <h2 className="list__item-detail--description">
                                     {item.title}
                                 </h2>
                             </Link>

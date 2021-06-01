@@ -6,6 +6,12 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+  &__image-container{
+    padding: 16px;
+    &--image{
+      border-radius: 4px;
+    }
+  }
   &__list-item{
     background-color: $ml-background-card-color;
     padding: 5px 5px;
@@ -28,6 +34,7 @@
     }
     &--description{
       font-weight: 300;
+      font-size: $ml-size-list-description;
     }
     &--shipping {
       color: $ml-shipping-color;
@@ -36,6 +43,7 @@
   &__item-address{
     padding: 10px 15px 0 0;
     font-style: inherit;
+    font-size: $ml-size-list-address;
   }
   &__breadcrumb {
     max-width: 1200px;
