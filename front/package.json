@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
-    "build": "react-scripts build && react-snap && copyBuild.js",
+    "build": "react-scripts build && react-snap && node copyBuild.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
