@@ -1,15 +1,15 @@
 import {IItemList} from "../../common/Models/IItemsList";
 import Grid from "@material-ui/core/Grid";
 import {Link, useLocation} from "react-router-dom";
-import {useMemo} from "react";
+import {useEffect} from "react";
 import './ItemList.scss';
 
 export const ItemList = ({itemList, searchKey}: {itemList: IItemList | null, searchKey: Function | any}) =>{
     let search: string = useLocation().search;
     const value = new URLSearchParams(search).get('search');
-    if(value !== null){
+    useEffect(()=>{
         searchKey(value);
-    }
+    }, [value, searchKey]);
     const renderItems = () =>{
         let itemsArray:any = [];
         itemList?.items.forEach((item)=>{

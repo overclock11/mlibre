@@ -23,8 +23,8 @@ function App() {
         if (searchKey !== searchKeyword) {
             setLoading(true);
             setSearchKey(searchKeyword);
-            await SearchByKeyWord(searchKeyword).then((response)=>{
-                setItems(response.data);
+            await SearchByKeyWord(searchKeyword).then((res=>res.json())).then((response)=>{
+                setItems(response);
                 setLoading(false);
             });
         }
@@ -33,8 +33,8 @@ function App() {
         if (itemId !== id) {
             setLoading(true);
             setItemId(id);
-            GetItemById(id).then((response)=>{
-                setItem(response.data);
+            GetItemById(id).then(res => res.json()).then((response)=>{
+                setItem(response);
             });
             setLoading(false);
         }

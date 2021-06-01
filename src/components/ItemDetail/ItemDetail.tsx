@@ -3,12 +3,13 @@ import './ItemDetail.scss';
 import {useParams} from "react-router-dom";
 import {IItemDetail} from "../../common/Models/IItemDetail";
 import {MlButton} from "../../common/MlButton/MlButton";
+import {useEffect} from "react";
 
 export const ItemDetail = ({itemDetail, selectedItem}: {itemDetail: IItemDetail | null, selectedItem: Function})=>{
     const params: any = useParams();
-    if(params.id !== null){
+    useEffect(()=>{
         selectedItem(params.id);
-    }
+    }, [params, selectedItem]);
     const buyItem = () => {
         console.log('comprando item');
     }

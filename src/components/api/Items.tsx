@@ -1,21 +1,8 @@
-import { setup } from 'axios-cache-adapter';
-const api = setup({
-    baseURL: 'http://localhost:3007/api/items/',
-    cache: {
-        maxAge: 180000
-    }
-})
-
 const SearchByKeyWord = async (keyWord: string) => {
-    return api.get(`?q=${keyWord}`, {
-        cache: {
-            maxAge: 120000,
-            exclude: { query: false }
-        }
-    });
+    return fetch(`http://192.168.0.2:3007/api/items/?q=${keyWord}`,{cache: 'force-cache'});
 }
 const GetItemById = async (id: string) =>{
-    return api.get(`${id}`);
+    return fetch(`http://192.168.0.2:3007/api/items/${id}`,{cache: 'force-cache'});
 }
 
 export {SearchByKeyWord, GetItemById};

@@ -1,7 +1,6 @@
 import {useLocation} from "react-router-dom";
 import './Breadcrumb.scss';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import {IItemList} from "../Models/IItemsList";
 
 export const Breadcrumb = ({itemList}: {itemList: string[] | undefined}) => {
     const location = useLocation();

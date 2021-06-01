@@ -1,8 +1,7 @@
-import {Link, useLocation} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 import SearchIcon from '@material-ui/icons/Search';
 import './SearchBar.scss';
-import {useMemo} from "react";
 
 export const SearchBar = ({searchKey} : { searchKey: Function}) => {
     const history = useHistory();
