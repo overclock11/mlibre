@@ -48,7 +48,7 @@ export class ItemProvider {
             return result;
         } catch (err) {
             if (err.config.url.indexOf("description")>0){
-                result.items = this.getProduct(data, description.plain_text);
+                result.items = this.getProduct(data, "");
                 return result;
             }
             throw err.message;
