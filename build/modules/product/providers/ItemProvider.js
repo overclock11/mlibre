@@ -36,19 +36,26 @@ class ItemProvider {
         }
     }
     async getItem(itemId) {
+        let data = null;
+        let description = null;
+        const result = {
+            author: {
+                name: 'Julian',
+                lastname: 'Borray'
+            },
+            items: []
+        };
         try {
-            const { data } = await axios_1.default.get(`https://api.mercadolibre.com//items/${itemId}`);
-            const description = await axios_1.default.get(`https://api.mercadolibre.com//items/${itemId}/description`).then(response => response.data);
-            const result = {
-                author: {
-                    name: 'Julian',
-                    lastname: 'Borray'
-                },
-                items: this.getProduct(data, description.plain_text)
-            };
+            data = await axios_1.default.get(`https://api.mercadolibre.com//items/${itemId}`).then(response => response.data);
+            description = await axios_1.default.get(`https://api.mercadolibre.com//items/${itemId}/description`).then(response => response.data);
+            result.items = this.getProduct(data, description.plain_text);
             return result;
         }
         catch (err) {
+            if (err.config.url.indexOf("description") > 0) {
+                result.items = this.getProduct(data, description.plain_text);
+                return result;
+            }
             throw err.message;
         }
     }

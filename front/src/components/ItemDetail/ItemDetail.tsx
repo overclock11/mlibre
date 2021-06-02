@@ -37,7 +37,7 @@ export const ItemDetail = ({itemDetail, selectedItem}: {itemDetail: IItemDetail 
                             <p className="item-detail__description">
                                 {itemDetail?.description}
                             </p>
-                        </Grid>): <div></div>}
+                        </Grid>): <div className="item-detail__description-empty"></div>}
                 </Grid>
             </div>
         </div>

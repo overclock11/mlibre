@@ -32,18 +32,25 @@ export class ItemProvider {
     }
 
     async getItem(itemId: string): Promise<IItem> {
+        let data = null;
+        let description = null;
+        const result: IItem = {
+            author: {
+                name: 'Julian',
+                lastname: 'Borray'
+            },
+            items: []
+        }
         try {
-            const {data} = await axios.get(`https://api.mercadolibre.com//items/${itemId}`);
-            const description = await axios.get(`https://api.mercadolibre.com//items/${itemId}/description`).then(response => response.data);
-            const result: IItem = {
-                author: {
-                    name: 'Julian',
-                    lastname: 'Borray'
-                },
-                items: this.getProduct(data, description.plain_text)
-            }
+           data = await axios.get(`https://api.mercadolibre.com//items/${itemId}`).then(response => response.data);
+           description = await axios.get(`https://api.mercadolibre.com//items/${itemId}/description`).then(response => response.data);
+            result.items = this.getProduct(data, description.plain_text);
             return result;
         } catch (err) {
+            if (err.config.url.indexOf("description")>0){
+                result.items = this.getProduct(data, description.plain_text);
+                return result;
+            }
             throw err.message;
         }
     }

@@ -18,6 +18,7 @@ function App() {
     const [itemId, setItemId] = useState<string | null>(null);
     const [searchKey, setSearchKey] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
+    const [apiError, setApiError] = useState<boolean>(false);
 
     const getItems = async (searchKeyword: string): Promise<void> => {
         if (searchKey !== searchKeyword) {
@@ -25,8 +26,10 @@ function App() {
             setSearchKey(searchKeyword);
             await SearchByKeyWord(searchKeyword).then((res=>res.json())).then((response)=>{
                 setItems(response);
-                setLoading(false);
-            });
+            }).catch((error)=>{
+                console.log(error);
+                setApiError(true)
+            }).finally(() => setLoading(false));;
         }
     }
     const getItemById = async (id: string): Promise<void> => {
@@ -35,8 +38,10 @@ function App() {
             setItemId(id);
             GetItemById(id).then(res => res.json()).then((response)=>{
                 setItem(response);
-            });
-            setLoading(false);
+            }).catch((error)=>{
+                console.log(error);
+                setApiError(true)
+            }).finally(() => setLoading(false));
         }
     }
     if(loading === true) {
@@ -48,7 +53,7 @@ function App() {
                 </Loading>
             </Router>
         );
-    } else if(items?.items.length === 0) {
+    } else if(items?.items.length === 0 || apiError) {
         return (
             <Router>
                 <SearchBar searchKey={getItems}/>
