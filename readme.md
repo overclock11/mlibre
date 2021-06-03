@@ -1,7 +1,7 @@
-###MLibre :rocket:
+### MLibre
 ___________
 
-####Descripción general
+#### Descripción general
 En el __frontend__ la aplicación está construida usando React con Typescript guiada por el patrón de componentes inteligentes. 
 Está compuesta principalmente por componentes funcionales, hooks e interfaces, su estructura está dividida
 en:
@@ -23,7 +23,7 @@ En cuanto los requerimientos funcionales mencionados en el documento de la prueb
 
 **SEO**: Se aplicó un pre-renderizado, urls amigables
 
-Puede encontrar la aplicación desplegada en [https://mlilbre.herokuapp.com/](https://mlilbre.herokuapp.com/)
+Puede encontrar la aplicación desplegada en [https://mlilbre.herokuapp.com/](https://mlilbre.herokuapp.com/) :rocket:
 
 
  ### Levantar front y back en desarrollo
