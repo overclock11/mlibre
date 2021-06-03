@@ -1,7 +1,8 @@
-### MLibre
-___________
+# MLibre
 
-#### Descripción general
+### Descripción general
+
+#### frontend
 En el __frontend__ la aplicación está construida usando React con Typescript guiada por el patrón de componentes inteligentes. 
 Está compuesta principalmente por componentes funcionales, hooks e interfaces, su estructura está dividida
 en:
@@ -10,10 +11,11 @@ en:
 * Components: contiene los componentes principales de la aplicación 
 * Common: Contiene los componentes que están pensados para ser utilizados varias veces en la aplicación o a futuro incluso formar una librería al estilo de material-ui
   
-
+#### Backend
 En el __backend__ encontrarán un diseño modular construido con NodeJS y Typescript pensado para levantar uno o varios módulos según se configure permitiendole escalar mas fácilmente.
 
-En cuanto los requerimientos funcionales mencionados en el documento de la prueba para cada uno de ellos se hizo una optimización.
+#### Requerimientos no funcionales
+En cuanto los requerimientos no funcionales mencionados en el documento de la prueba para cada uno de ellos se hizo una optimización.
 
 **Escalabilidad**: La estructura del frontend se pensó para generar bajo acoplamiento separando componentes comunes y usando el patró de componentes inteligentes,  el backend tiene una estructura modular que está pensada para escalar de forma horizontal. 
 
@@ -25,6 +27,7 @@ En cuanto los requerimientos funcionales mencionados en el documento de la prueb
 
 Puede encontrar la aplicación desplegada en [https://mlilbre.herokuapp.com/](https://mlilbre.herokuapp.com/) :rocket:
 
+-----
 
  ### Levantar front y back en desarrollo
 Para subir el front vaya a la carpeta raíz del proyecto y ejecute los siguientes comandos.
@@ -42,7 +45,7 @@ Esto levantará el back en http://localhost:3007
 
 
 
-#### Levantar aplicación en modo producción
+### Levantar aplicación en modo producción
 
 En la carpeta raíz de la aplicación ejecute los siguientes comandos
 
@@ -53,7 +56,7 @@ En la carpeta raíz de la aplicación ejecute los siguientes comandos
 Eso creará un build optimizado que puede verse en http://localhost:3007
 
 
-#### Pruebas unitarias del front
+### Pruebas unitarias del front
 Se agregaron algunas pruebas unitarias sencillas para validar el funcionamiento de algunos componentes.
 Para lanzarlas vaya a la carpeta raíz del proyecto y ejecute los siguientes comandos
 1. `cd front`
