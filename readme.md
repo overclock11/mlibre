@@ -30,7 +30,7 @@ Puede encontrar la aplicación desplegada en [https://mlilbre.herokuapp.com/](ht
 
 #### Resultados lighthouse
 
-![GitHub Logo](./lighthouse.png)
+![lighthouse](/lighthouse.png)
 
 -----
 
