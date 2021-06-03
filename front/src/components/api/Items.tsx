@@ -1,5 +1,5 @@
-//const baseUrl = "http://localhost:3007";
-const baseUrl = "";
+const baseUrl = "http://localhost:3007";
+//const baseUrl = "";
 const SearchByKeyWord = async (keyWord: string) => {
     return fetch(`${baseUrl}/api/items/?q=${keyWord}`,{cache: 'force-cache'});
 }
