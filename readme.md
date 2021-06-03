@@ -27,6 +27,11 @@ En cuanto los requerimientos no funcionales mencionados en el documento de la pr
 
 Puede encontrar la aplicación desplegada en [https://mlilbre.herokuapp.com/](https://mlilbre.herokuapp.com/) :rocket:
 
+
+#### Resultados lighthouse
+
+![GitHub Logo](./lighthouse.png)
+
 -----
 
  ### Levantar front y back en desarrollo
