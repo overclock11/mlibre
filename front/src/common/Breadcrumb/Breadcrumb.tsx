@@ -6,6 +6,7 @@ export const Breadcrumb = ({itemList}: {itemList: string[] | undefined}) => {
     const location = useLocation();
     const createBreadCrumb = () =>{
         if(itemList) {
+            console.log("itemList", itemList);
             let items = itemList.map((element, index)=>{
                 return itemList.length - 1 === index ? <span key={element}> {element} </span> : <span key={element}>{element} <ArrowForwardIosIcon style={{ fontSize: 10, marginLeft: 10, marginRight:10 }}/> </span>;
             });

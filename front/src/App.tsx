@@ -44,7 +44,7 @@ function App() {
             }).finally(() => setLoading(false));
         }
     }
-    if(loading === true) {
+    if(loading) {
         return (
             <Router>
                 <Loading>
