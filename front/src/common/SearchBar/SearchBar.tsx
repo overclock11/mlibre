@@ -6,8 +6,9 @@ import './SearchBar.scss';
 export const SearchBar = ({searchKey} : { searchKey: Function}) => {
     const history = useHistory();
     const searchKeyWord = (event: any, origin = 'input') => {
-        if (event.charCode === 13 || origin === 'button') {
-            history.push(`/items?search=${(document.getElementById("inputSearchBar") as HTMLInputElement).value}`);
+        const text = (document.getElementById("inputSearchBar") as HTMLInputElement).value;
+        if ((event.charCode === 13 || origin === 'button') && text!=='') {
+            history.push(`/items?search=${text}`);
             searchKey((document.getElementById("inputSearchBar") as HTMLInputElement).value);
             (document.getElementById("inputSearchBar") as HTMLInputElement).value = '';
         }

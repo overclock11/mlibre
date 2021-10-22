@@ -1,6 +1,6 @@
 import './MlButton.scss';
 
-export const MlButton = ({type, text, handleClick}: {type: 'buy', text: string , handleClick: Function}) =>{
+export const MlButton = ({type, text, handleClick}: {type: 'buy' | 'remove', text: string , handleClick: Function}) =>{
     const clickButton = () =>{
         handleClick();
     }

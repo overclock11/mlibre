@@ -12,5 +12,9 @@
       background-color: $ml-buy-button-color;
       color: white;
     }
+    &--remove{
+      background-color: $ml-remove-button-color;
+      color: white;
+    }
   }
 }
