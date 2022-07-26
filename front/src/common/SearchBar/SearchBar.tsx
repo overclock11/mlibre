@@ -2,11 +2,13 @@ import {Link} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 import SearchIcon from '@material-ui/icons/Search';
 import './SearchBar.scss';
+import {useRef} from "react";
 
 export const SearchBar = ({searchKey} : { searchKey: Function}) => {
     const history = useHistory();
+    const searchRef = useRef<HTMLInputElement>(null);
     const searchKeyWord = (event: any, origin = 'input') => {
-        const text = (document.getElementById("inputSearchBar") as HTMLInputElement).value;
+        const text = searchRef.current?.value;
         if ((event.charCode === 13 || origin === 'button') && text!=='') {
             history.push(`/items?search=${text}`);
             searchKey((document.getElementById("inputSearchBar") as HTMLInputElement).value);
@@ -25,7 +27,8 @@ export const SearchBar = ({searchKey} : { searchKey: Function}) => {
                    className="search__input-search"
                    id="inputSearchBar"
                    placeholder="Buscar productos, marcas y más..."
-                   onKeyPress={searchKeyWord}/>
+                   onKeyPress={searchKeyWord}
+                   ref={searchRef}/>
             <button className="search__button-search" onClick={e => searchKeyWord(e, 'button')}>
                 <SearchIcon fontSize="small"/>
             </button>

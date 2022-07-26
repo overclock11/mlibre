@@ -4,6 +4,9 @@
   margin: 15px auto;
   background-color: $ml-background-card-color;
   border-radius: 5px;
+  &__button-space{
+    margin-top: 15px;
+  }
   &__image{
     padding-top: 18px;
   }

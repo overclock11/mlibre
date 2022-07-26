@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './App.scss';
 import {IItemList} from './common/Models/IItemsList';
@@ -11,6 +11,7 @@ import {ItemList} from "./components/ItemList/ItemList";
 import {ItemDetail} from "./components/ItemDetail/ItemDetail";
 import {Empty} from "./common/Empty/Empty";
 import {SearchByKeyWord, GetItemById} from './components/api/Items';
+import {useFetch} from "./hooks/useFecth";
 
 function App() {
     const [items, setItems] = useState<IItemList | null>(null);
@@ -19,7 +20,6 @@ function App() {
     const [searchKey, setSearchKey] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [apiError, setApiError] = useState<boolean>(false);
-
     const getItems = async (searchKeyword: string): Promise<void> => {
         if (searchKey !== searchKeyword) {
             setLoading(true);

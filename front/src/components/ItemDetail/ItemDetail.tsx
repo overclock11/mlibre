@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import {IItemDetail} from "../../common/Models/IItemDetail";
 import {MlButton} from "../../common/MlButton/MlButton";
 import {useEffect} from "react";
+import {StyledButtonBase, StyledButtonAddToCar} from "../../common/StyledButton/StyledButton";
 
 export const ItemDetail = ({itemDetail, selectedItem}: {itemDetail: IItemDetail | null, selectedItem: Function})=>{
     const params: any = useParams();
@@ -12,6 +13,9 @@ export const ItemDetail = ({itemDetail, selectedItem}: {itemDetail: IItemDetail 
     }, [params, selectedItem]);
     const buyItem = () => {
         console.log('comprando item');
+    }
+    const addToCar = ()=>{
+        console.log('add to car');
     }
     return (
         <div className="item-detail__item-space">
@@ -24,9 +28,15 @@ export const ItemDetail = ({itemDetail, selectedItem}: {itemDetail: IItemDetail 
                     <Grid item sm={4} md={4}>
                         <p className="item-detail__sold">{itemDetail?.condition.toLowerCase() === 'new' ? "Nuevo " : "Usado "} - {itemDetail?.sold_quantity} vendidos</p>
                         <h2 className="item-detail__title">{itemDetail?.title}</h2>
-                        <span className="item-detail__price">$ {itemDetail?.price.amount.toLocaleString(navigator.language, { minimumFractionDigits: 2,currency: itemDetail?.price.currency, style:'decimal'})}</span>
+                        <span
+                            className="item-detail__price">$ {itemDetail?.price.amount.toLocaleString(navigator.language, {
+                            minimumFractionDigits: 2,
+                            currency: itemDetail?.price.currency,
+                            style: 'decimal'
+                        })}</span>
                         <div className="item-detail__buy-button">
                             <MlButton handleClick={buyItem} text={'Comprar'} type={'buy'}/>
+                            <StyledButtonAddToCar onClick={addToCar} text={'red'} className="item-detail__button-space">Agregar al carrito</StyledButtonAddToCar>
                         </div>
                     </Grid>
                 </Grid>
@@ -37,7 +47,7 @@ export const ItemDetail = ({itemDetail, selectedItem}: {itemDetail: IItemDetail 
                             <p className="item-detail__description">
                                 {itemDetail?.description}
                             </p>
-                        </Grid>): <div className="item-detail__description-empty"></div>}
+                        </Grid>) : <div className="item-detail__description-empty"></div>}
                 </Grid>
             </div>
         </div>
