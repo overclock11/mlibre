@@ -28,6 +28,9 @@
     "typescript": "^4.3.2",
     "web-vitals": "^1.1.2"
   },
+  "optionalDependencies": {
+    "babel-loader": "8.1.0"
+  },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
     "build": "react-scripts build && react-snap && node copyBuild.js",

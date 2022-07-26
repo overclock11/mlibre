@@ -26,7 +26,7 @@ export class ItemProvider {
                 }
             }
             return result;
-        } catch (err) {
+        } catch (err: any) {
             throw err.message;
         }
     }
@@ -46,7 +46,7 @@ export class ItemProvider {
            description = await axios.get(`https://api.mercadolibre.com//items/${itemId}/description`).then(response => response.data);
             result.items = this.getProduct(data, description.plain_text);
             return result;
-        } catch (err) {
+        } catch (err: any) {
             if (err.config.url.indexOf("description")>0){
                 result.items = this.getProduct(data, "");
                 return result;
