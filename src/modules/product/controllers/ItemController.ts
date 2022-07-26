@@ -30,6 +30,14 @@ export class ItemController {
                 res.status(500).json({message: err});
             }
         });
+        this.router.get('/response/:id', async (req,  res) => {
+            try{
+                const value = await this.itemProvider.getItem(req.params.id);
+                res.status(200).send(value);
+            } catch (err) {
+                res.status(parseInt(req.params.id)).json({message: 'respuesta con status ' + req.params.id});
+            }
+        });
         return this.router;
     }
 }
