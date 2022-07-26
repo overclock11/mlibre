@@ -35,7 +35,11 @@ export class ItemController {
                 const value = await this.itemProvider.getItem(req.params.id);
                 res.status(200).send(value);
             } catch (err) {
-                res.status(parseInt(req.params.id)).json({message: 'respuesta con status ' + req.params.id});
+                const errorBody = {
+                    message: `respuesta con status ${req.params.id}`,
+                    statusText: `respuesta con statusText ${req.params.id}`,
+                }
+                res.status(parseInt(req.params.id)).json(errorBody);
             }
         });
         return this.router;
