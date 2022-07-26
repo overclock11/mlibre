@@ -7,13 +7,16 @@
   display: block;
   cursor: pointer;
   &__type{
-
     &--buy{
       background-color: $ml-buy-button-color;
       color: white;
     }
     &--remove{
       background-color: $ml-remove-button-color;
+      color: white;
+    }
+    &--add-car{
+      background-color: #2B5102;
       color: white;
     }
   }
